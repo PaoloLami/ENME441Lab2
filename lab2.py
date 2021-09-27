@@ -3,7 +3,8 @@ from time import sleep
 p1=4
 p2=17
 p3=2
-in1,in2=23,24
+in1,in2=23,
+GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(p1, GPIO.OUT) 
 GPIO.setup(p2, GPIO.OUT) 
