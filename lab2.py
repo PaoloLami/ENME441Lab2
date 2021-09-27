@@ -11,11 +11,7 @@ GPIO.setup(p2, GPIO.OUT)
 GPIO.setup(p3, GPIO.OUT) 
 GPIO.setup(in1,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(in2,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
-while True:
-  GPIO.output(p3, 0)
-  sleep(0.5)
-  GPIO.output(p3, 1)
-  sleep(0.5)
+GPIO.output(p3, 1)
 try:
   def myCallback(pin):  
     if pin==in1:
