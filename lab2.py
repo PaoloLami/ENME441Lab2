@@ -40,8 +40,8 @@ while True:
         sleep(0.5)
         GPIO.output(p3, 1)
         sleep(0.5)   
-  GPIO.add_event_detect(in1,GPIO.RISING,callback=myCallback,bouncetime=100)
-  GPIO.add_event_detect(in2,GPIO.RISING,callback=myCallback,bouncetime=100)
-except KeyboardInterrupt:
-  print('\nExiting')
+    GPIO.add_event_detect(in1,GPIO.RISING,callback=myCallback,bouncetime=100)
+    GPIO.add_event_detect(in2,GPIO.RISING,callback=myCallback,bouncetime=100)
+  except KeyboardInterrupt:
+    print('\nExiting')
 GPIO.cleanup()
