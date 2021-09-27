@@ -1,5 +1,6 @@
 import RPi.GPIO as GPIO
 from time import sleep
+GPIO.cleanup()
 p1=24
 p2=23
 p3=4
