@@ -13,24 +13,3 @@ GPIO.setup(in1,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(in2,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 GPIO.output(p1, 1)
 sleep(10)
-try:
-  def myCallback(pin):  
-    if pin==in1:
-      pwm = GPIO.PWM(p1, 100)
-      pwm.start(0)
-      while 1:
-        for dc in range(101):
-          pwm.ChangeDutyCycle(dc)
-          sleep(0.01)
-    if pin==in2:
-      pwm = GPIO.PWM(p2, 100)
-      pwm.start(0)
-      while 1:
-        for dc in range(101):
-          pwm.ChangeDutyCycle(dc)
-          sleep(0.01)
-  GPIO.add_event_detect(in1,GPIO.RISING,callback=myCallback,bouncetime=100)
-  GPIO.add_event_detect(in2,GPIO.RISING,callback=myCallback,bouncetime=100)
-except KeyboardInterrupt:
-  print('\nExiting')
-GPIO.cleanup()
