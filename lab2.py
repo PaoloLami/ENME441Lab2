@@ -28,6 +28,8 @@ try:
         GPIO.output(p2,0)  
     GPIO.add_event_detect(in1,GPIO.RISING,callback=myCallback,bouncetime=500)
     GPIO.add_event_detect(in2,GPIO.RISING,callback=myCallback,bouncetime=500)
+    GPIO.remove_event_detect(in1)
+    GPIO.remove_event_detect(in2)
 except KeyboardInterrupt:
   print('\nExiting')
 GPIO.cleanup()
