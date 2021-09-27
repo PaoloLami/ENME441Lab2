@@ -26,6 +26,7 @@ try:
           for dc in range(101):
             pwm.ChangeDutyCycle(dc)
             sleep(0.01)
+          break
       if pin==in2:
         pwm = GPIO.PWM(p2, 100)
         pwm.start(0)
@@ -33,6 +34,7 @@ try:
           for dc in range(101):
             pwm.ChangeDutyCycle(dc)
             sleep(0.01)  
+          break
     GPIO.add_event_detect(in1,GPIO.RISING,callback=myCallback,bouncetime=100)
     GPIO.add_event_detect(in2,GPIO.RISING,callback=myCallback,bouncetime=100)
 except KeyboardInterrupt:
