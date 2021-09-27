@@ -11,7 +11,7 @@ GPIO.setup(p2, GPIO.OUT)
 GPIO.setup(p3, GPIO.OUT) 
 GPIO.setup(in1,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(in2,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
-GPIO.output(p3, 1)
+GPIO.output(p1, 1)
 sleep(10)
 try:
   def myCallback(pin):  
