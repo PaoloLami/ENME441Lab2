@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 from time import sleep
 p1=4
 p2=17
-p3=27
+p3=2
 in1,in2=23,24
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(p1, GPIO.OUT) 
@@ -11,10 +11,10 @@ GPIO.setup(p3, GPIO.OUT)
 GPIO.setup(in1,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(in2,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 while True:
-    GPIO.output(p3, 0)
-    sleep(0.5)
-    GPIO.output(p3, 1)
-    sleep(0.5)
+  GPIO.output(p3, 0)
+  sleep(0.5)
+  GPIO.output(p3, 1)
+  sleep(0.5)
 try:
   def myCallback(pin):  
     if pin==in1:
