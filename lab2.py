@@ -26,7 +26,7 @@ try:
             pwm.ChangeDutyCycle(dc)
             sleep(0.01)
       except KeyboardInterrupt:
-      print('\nExiting')
+        print('\nExiting')
     if pin == in2:
       pwm = GPIO.PWM(p2, 100)
       try:
@@ -36,7 +36,7 @@ try:
             pwm.ChangeDutyCycle(dc)
             sleep(0.01)
       except KeyboardInterrupt:
-      print('\nExiting')
+        print('\nExiting')
   gpio.add_event_detect(in1,gpio.RISING,callback=myCallback,bouncetime=100)
   gpio.add_event_detect(in2,gpio.RISING,callback=myCallback,bouncetime=100
 except KeyboardInterrupt:
