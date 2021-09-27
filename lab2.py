@@ -1,9 +1,8 @@
 import RPi.GPIO as GPIO
 from time import sleep
-GPIO.cleanup()
-p1=24
+p1=4
 p2=23
-p3=4
+p3=24
 in1,in2=17,27
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(p1, GPIO.OUT) 
@@ -17,7 +16,6 @@ while True:
     GPIO.output(p3, 1)
     sleep(0.5)
 try:
-  
   def myCallback(pin):  
     if pin==in1:
       pwm = GPIO.PWM(p1, 100)
