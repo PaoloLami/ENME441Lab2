@@ -14,13 +14,18 @@ GPIO.setup(in2,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 try:
   def myCallback(pin):
     if pin==in1:
-      GPIO.output(p1,1)
-      sleep(2)
-      GPIO.output(p1,0)
+      pwn1=GPIO.PWM(p1,100)
+      pwn1.start(0)
+      for dc in range(101):
+        pwm1.ChangeDutyCycle(dc)
+        sleep(0.1)
     if pin==in2:
-      GPIO.output(p2,1)
-      sleep(2)
-      GPIO.output(p2,0)  
+      pwn2=GPIO.PWM(p1,100)
+      pwn2.start(0)
+      for dc in range(101):
+        pwm2.ChangeDutyCycle(dc)
+        sleep(0.1)
+  GPIO.add_event_detect(in1,GPIO.FALLING,callback=myCallback,bouncetime=500)
   GPIO.add_event_detect(in2,GPIO.FALLING,callback=myCallback,bouncetime=500)
   while True:
     GPIO.output(p3, 0)
