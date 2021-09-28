@@ -19,10 +19,16 @@ try:
       for dc in range(101):
         pwm1.ChangeDutyCycle(dc)
         sleep(0.1)
+      for dc in range(101,0,-1):
+        pwm1.ChangeDutyCycle(dc)
+        sleep(0.1)
     if pin==in2:
       pwm2=GPIO.PWM(p2,100)
       pwm2.start(0)
       for dc in range(101):
+        pwm2.ChangeDutyCycle(dc)
+        sleep(0.1)
+      for dc in range(101,0,-1):
         pwm2.ChangeDutyCycle(dc)
         sleep(0.1)
   GPIO.add_event_detect(in1,GPIO.FALLING,callback=myCallback,bouncetime=500)
