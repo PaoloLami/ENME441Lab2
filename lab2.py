@@ -14,14 +14,14 @@ GPIO.setup(in2,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 try:
   def myCallback(pin):
     if pin==in1:
-      pwn1=GPIO.PWM(p1,100)
-      pwn1.start(0)
+      pwm1=GPIO.PWM(p1,100)
+      pwm1.start(0)
       for dc in range(101):
         pwm1.ChangeDutyCycle(dc)
         sleep(0.1)
     if pin==in2:
-      pwn2=GPIO.PWM(p1,100)
-      pwn2.start(0)
+      pwm2=GPIO.PWM(p2,100)
+      pwm2.start(0)
       for dc in range(101):
         pwm2.ChangeDutyCycle(dc)
         sleep(0.1)
