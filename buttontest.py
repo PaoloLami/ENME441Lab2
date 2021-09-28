@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from time import sleep
+import time
 p1=4
 p2=17
 p3=27
@@ -11,7 +11,6 @@ GPIO.setup(p2, GPIO.OUT)
 GPIO.setup(p3, GPIO.OUT) 
 GPIO.setup(in1,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
 GPIO.setup(in2,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
-
 def myCallback(pin):
   if pin==in1:
     GPIO.output(p1,1)
@@ -20,11 +19,9 @@ def myCallback(pin):
   if pin==in2:
     GPIO.output(p2,1)
     sleep(2)
-    GPIO.output(p2,0)
-    
+    GPIO.output(p2,0)   
 GPIO.add_event_detect(in1,GPIO.FALLING,callback=myCallback,bouncetime=500)
 GPIO.add_event_detect(in2,GPIO.FALLING,callback=myCallback,bouncetime=500)
-
 while True:
   print('.', end='')
   time.sleep(0.1)
